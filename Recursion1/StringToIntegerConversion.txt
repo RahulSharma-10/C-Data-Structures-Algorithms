@@ -1,0 +1,30 @@
+#include<string.h>
+int val=0;
+int sum(char input[])
+{
+    if(input[0]=='\0')
+    {
+        return val;
+    }
+ 
+    val=val*10+(input[0]-48);
+    return sum(input+1);
+    
+}
+
+int i=0,ans;
+int stringToNumber(char input[]) {
+    // Write your code here
+   int n=strlen(input);
+    if(input[0]=='\0')
+    {   
+        
+        return ans;
+    }
+    else if(input[0]!='\0')
+    {
+        ans=sum(input);
+        return ans;
+    }
+
+}

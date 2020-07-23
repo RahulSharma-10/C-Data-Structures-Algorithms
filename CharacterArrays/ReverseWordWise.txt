@@ -1,0 +1,37 @@
+
+void reverseStringWordWise(char input[]) {
+    // Write your code here
+int i=0, j=0,k=0,len=0;
+   while(input[len]!='\0')
+   {
+       len++;
+   }
+   
+    j=len-1;
+    //REVERSE THE STRING
+    for(i=0;i<(len/2);i++)
+    {    
+        int temp=input[i];
+        input[i]=input[j];
+        input[j]=temp;
+        j--;
+    }
+    //When a Gap comes, reverse it again, Update Start and End of Word
+    int start=0;
+    for(i=0;i<=len;i++)
+    {   
+        int last=i;
+        if(input[i]==' ' || i==len)
+        {
+            for(k=start;k<((i+start)/2);k++)
+            {
+                int rev=input[k];
+                input[k]=input[last-1];
+                input[last-1]=rev;
+                last--;
+            }
+            start=i+1;
+        }
+    }
+    
+}

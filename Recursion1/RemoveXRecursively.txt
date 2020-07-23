@@ -1,0 +1,38 @@
+// Change in the given string itself. So no need to return or print anything
+#include<string.h>
+
+
+void remshift(char input[],int start, int end)
+{
+    if(start<end)
+    {
+        input[start]=input[start+1];
+        remshift(input,start+1,end);
+    }
+    else if(start>=end)
+    {
+        input[end]='\0';
+        return;
+    }
+    
+    
+}
+
+void removeX(char input[]) {
+    // Write your code here
+    int n=strlen(input);
+if(n==0)
+{
+    return;
+}
+      if(input[0]=='x')
+      {
+          remshift(input,0,n-1);
+          return removeX(input);
+      }
+      else if(input[0]!='x' && input[0]!='\0')
+      {
+          
+        return removeX(input+1);
+      }
+}
