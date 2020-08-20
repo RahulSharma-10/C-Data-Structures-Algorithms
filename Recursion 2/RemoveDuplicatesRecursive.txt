@@ -1,0 +1,23 @@
+void removeConsecutiveDuplicates(char *input) {
+	/* Don't write main().
+	* Don't read input, it is passed as function argument.    
+	* Change in the given string itself.
+	* No need to return or print anything
+	* Taking input and printing output is handled automatically.
+	*/
+	 if(input[0]=='\0' || input[1]=='\0')   //BASE CASE
+  {
+      return;
+  }
+    removeConsecutiveDuplicates(input+1);   //RECURSIVE CALL
+  if(input[0]==input[1])
+  {  int n=0;
+      while(input[n]!='\0'){
+    	  input[n]=input[n+1];
+          n++;
+      }
+   return;
+      
+  }else{
+      return;
+  }

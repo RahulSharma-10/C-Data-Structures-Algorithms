@@ -1,0 +1,25 @@
+bool helper(char input[])
+{
+ 	if(input[0]=='\0')
+    {
+        return true;
+    }
+    if(input[0]=='a' && (input[1]=='\0' || input[1]=='a'  || (input[1]=='b' && input[2]=='b')))
+    {
+          return helper(input+1); 
+    }
+    if((input[0]=='b' && input[1]=='b') && (input[2]=='\0' || input[2]=='a') )
+    {
+           return helper(input+2);
+    }
+    return false;
+    
+}
+bool checkAB(char input[]) {
+	// Write your code here
+	if(input[0]=='a')
+    {
+        return helper(input);
+    }
+    return false;
+}

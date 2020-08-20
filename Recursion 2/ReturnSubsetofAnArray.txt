@@ -1,0 +1,20 @@
+int subset(int input[], int n, int output[][20]) {
+    // Write your code here
+	if(input[0]=='\0')
+    {
+        output[0][0]=0;
+        return 1;
+    }
+    int small = subset(input+1,n-1, output);
+    int x = input[0];
+    for(int i=0;i<small;i++)
+    {
+        output[i+small][0]=output[i][0]+1;
+     	for(int j=0;j<output[i][0];j++)
+        {
+            output[i+small][j+2]=output[i][j+1];
+        }
+        output[i+small][1]=x;
+    }
+    return 2*small;
+}

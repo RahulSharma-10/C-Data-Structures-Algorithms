@@ -1,0 +1,18 @@
+
+void print(string input, string output)
+{
+if(input.size()==0)
+{
+cout<<output<<endl;
+return;
+}
+print(input.substr(1),output+input[0]);
+print(input.substr(1),output);
+
+}
+
+void printsubs(string input)
+{
+  string output="";
+  print(input, output);
+}
