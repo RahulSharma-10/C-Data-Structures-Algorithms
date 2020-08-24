@@ -1,0 +1,17 @@
+#include<climits>
+#include<bits/stdc++.h>
+using namespace std;
+int maximumProfit(int budget[], int n) {
+    // Write your code here
+	sort(budget,budget+n);
+    int max=INT_MIN;
+    
+    for(int i=0;i<n;i++)
+    {
+        if(budget[i]*(n-i)>max)
+        {
+            max=budget[i]*(n-i);
+        }
+    }
+    return max;
+}

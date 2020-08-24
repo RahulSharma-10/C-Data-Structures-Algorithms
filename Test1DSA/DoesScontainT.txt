@@ -1,0 +1,30 @@
+#include<cstring>
+
+bool check (char large[],char*small,int size1,int size2)
+{
+ 	if(size2==0)
+    {
+        return true;
+    }
+    if(size1==0)
+    {
+        return false;
+    }
+    if(large[0]==small[0])
+    {
+        return check(large+1,small+1,size1-1,size2-1); 
+    }
+        
+	return check(large+1,small, size1-1,size2);
+    
+    
+    
+    
+}
+bool checksequenece(char large[] , char*small) {
+ 
+    int size1=strlen(large);
+    int size2=strlen(small);
+    
+    return check(large,small,size1,size2);
+}
